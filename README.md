@@ -8,7 +8,7 @@ The purpose of this project is to practice around with C#, slightly practice Dep
 
 ## TO-DO List
 
-[ ] Remove hard-coded translations
-[ ] Remove hard-coded web-pages
-[ ] Add additional pages to scrape
-[ ] Add environment variables for Docker
+- [ ] Remove hard-coded translations
+- [ ] Remove hard-coded web-pages
+- [ ] Add additional pages to scrape
+- [ ] Add environment variables for Docker
