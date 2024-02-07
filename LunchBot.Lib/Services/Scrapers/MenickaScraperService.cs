@@ -12,6 +12,7 @@ public class MenickaScraperService(WebService webService) : IWebScraperService
     /// <summary>
     /// Scrapes Menicka.cz menu from a given URL.
     /// </summary>
+    /// <param name="restaurantName">Name of the restaurant</param>
     /// <param name="url">URL to scrape restaurant menu from</param>
     /// <returns>Scraped Restaurant menu as object</returns>
     public Task<RestaurantMenu> ScrapeMenu(string restaurantName, string url)
@@ -55,8 +56,6 @@ public class MenickaScraperService(WebService webService) : IWebScraperService
     /// <returns>Parsed Food option</returns>
     private static FoodOption ParseFoodOption(HtmlNode node)
     {
-        Console.WriteLine(node.InnerHtml);
-        
         var name = node.SelectSingleNode(".//div[contains(@class, 'polozka')]").InnerText;
         var price = node.SelectSingleNode(".//div[contains(@class, 'cena')]").InnerText;
         

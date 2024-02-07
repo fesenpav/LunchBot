@@ -8,6 +8,11 @@ namespace LunchBot.Lib.Services;
 public class WebService : IDisposable
 {
     private readonly HttpClient _client = new();
+
+    public WebService()
+    {
+        Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+    }
     
     /// <summary>
     /// Downloads the provided URL as a string.
@@ -20,8 +25,7 @@ public class WebService : IDisposable
         response.EnsureSuccessStatusCode();
         
         // Because of encoding issues, we need to read the content as bytes and then convert to a string.
-        var bytes = response.Content.ReadAsByteArrayAsync().Result;
-        var html = Encoding.UTF8.GetString(bytes);
+        var html = response.Content.ReadAsStringAsync().Result;
 
         return html;
     }

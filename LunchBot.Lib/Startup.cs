@@ -19,7 +19,9 @@ public static class Startup
     {
         collection
             .AddSingleton<WebService>()
-            .AddScoped<IWebScraperService, MenickaScraperService>();
+            .AddScoped<IWebScraperService, MenickaScraperService>()
+            .AddSingleton<DiscordService>()
+            .AddSingleton<BotService>();
 
         return collection;
     }

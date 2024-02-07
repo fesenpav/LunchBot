@@ -7,8 +7,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Discord.Net" Version="3.13.0" />
       <PackageReference Include="HtmlAgilityPack" Version="1.11.58" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Options" Version="8.0.0" />
     </ItemGroup>
 
 </Project>
