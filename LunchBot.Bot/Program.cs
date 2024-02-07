@@ -22,14 +22,10 @@ public abstract class Program
             .AddSingleton<IConfiguration>(configuration)
             .Configure<BotConfiguration>(configuration.GetSection(nameof(BotConfiguration)));
         
+        // Send embed
         var provider = BuildServiceProvider(serviceCollection);
-        /*
-        var scraperService = provider.GetRequiredService<IWebScraperService>();
-        var kafarna = scraperService.ScrapeMenu("Kafárna na kus řeči", "https://www.menicka.cz/2044-kafarna-na-kus-reci.html").Result;
-        var redHook = scraperService.ScrapeMenu("Red hook", "https://www.menicka.cz/4486-red-hook.html").Result;
-        */
-        var botService = provider.GetRequiredService<BotService>();
-        botService.Start().GetAwaiter().GetResult();
+        var botService = provider.GetRequiredService<WebhookService>();
+        botService.SendEmbed();
     }
 
     /// <summary>

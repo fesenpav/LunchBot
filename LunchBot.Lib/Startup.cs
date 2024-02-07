@@ -20,8 +20,7 @@ public static class Startup
         collection
             .AddSingleton<WebService>()
             .AddScoped<IWebScraperService, MenickaScraperService>()
-            .AddSingleton<DiscordService>()
-            .AddSingleton<BotService>();
+            .AddSingleton<WebhookService>();
 
         return collection;
     }
