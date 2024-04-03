@@ -27,7 +27,7 @@ public class WebhookService
             .WithColor(Color.Orange);
 
         var stopwatch = Stopwatch.StartNew();
-        var kafarna = _webScraperService.ScrapeMenu("Kafárna na kus řeči", "https://www.menicka.cz/2044-kafarna-na-kus-reci.html").Result;
+        var kafarna = _webScraperService.ScrapeMenu("Kafárna na kus řeči", "https://www.menicka.cz/2044-kafrna-na-kus-ei.html").Result;
         var redHook = _webScraperService.ScrapeMenu("Red hook", "https://www.menicka.cz/4486-red-hook.html").Result;
         stopwatch.Stop();
             
